@@ -1,33 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {  Card, CardImg, } from "reactstrap";
 import { useRouter } from 'next/router'
+import Link from "next/link";
 import style from '../../styles/Home.module.css'
 
-// export const getStaticPaths = async () => {
-//     const res = await fetch ("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a");
-//     const data = await res.json();
-
-//     const paths = data.map(i => {
-//         return{
-//             params: {idDrink: i.idDrink.toString()}
-//         }
-//     })
-
-//     return{
-//         paths,
-//         fallback: false
-//     }
-// }
-
-// export const getStaticProps = async () => {
-//     const { idDrink } = useParams();
-//     const res = fetch ('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a' + idDrink)
-//     const data = await res.json();
-
-    // return {
-    //     props: {i: data}
-    // }
-// }
 const Detail = () => {
     const [state, setState] = useState({ post: [] });
   const router = useRouter();
@@ -124,7 +100,7 @@ const Detail = () => {
                                 )}
                             </ul>
                         </div>
-                <a href="/" className="text-bold text-center bg-danger">Back To Menu</a>
+                <Link href="/" className="text-bold text-center bg-danger">Back To Menu</Link>
             </div>
     </section>
     )
